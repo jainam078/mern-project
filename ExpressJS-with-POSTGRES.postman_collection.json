@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "52499866-3618-4f2e-9396-9ff4ed3a7962",
+		"name": "ExpressJS-with-POSTGRES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24474243"
+	},
+	"item": [
+		{
+			"name": "/api/sum   to get steps by input the number number2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number1\":\"940538\",\r\n    \"number2\":\"975634\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/sum",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"sum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/sum/save   to save the result",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number1\":\"940538\",\r\n    \"number2\":\"975634\",\r\n    \"steps\":{\"step1\":{\"carryString\":\"1_\",\"sumString\":\"3\"},\"step2\":{\"carryString\":\"11_\",\"sumString\":\"03\"},\"step3\":{\"carryString\":\"111_\",\"sumString\":\"203\"},\"step4\":{\"carryString\":\"111_\",\"sumString\":\"2203\"}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/sum/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"sum",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get data by pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/sum?page=2&limit=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"sum"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
